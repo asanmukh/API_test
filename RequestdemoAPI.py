@@ -94,6 +94,7 @@ def test_authenticate_using_otp():
 
 def test_login():
 
+    headers = {"Authorization": "Bearer Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjQ1Nzg4NDY4LCJqdGkiOiJiYWI4Y2QyNC1hZDU2LTQyNTgtOGNmYi03Y2RiNDg2YmM4ZjMiLCJuYmYiOjE2NDU3ODg0NjgsInR5cGUiOiJhY2Nlc3MiLCJzdWIiOiI2MjE4Yjk0NjllYWY2ZDY4OTg0MWIzYWQiLCJleHAiOjE2NDU3ODkzNjh9.oBUe8WDUa__0mltOeJpQVmQVvawEJaGqfri5qtbIaIE"}
     response = requests.get("https://hbs-ob-stage.herokuapp.com/protected_test")
     print(response.status_code)
 
