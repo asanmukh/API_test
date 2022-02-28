@@ -6,7 +6,6 @@ def test_check_status():
     assert response.status_code == 200
     print(response.status_code)
     print(response.text)
-    print(response.json())
 
 def test_create_user():
     payload = {
@@ -17,9 +16,8 @@ def test_create_user():
         "otp": 111111
     }
     endpoint ="https://hbs-ob-stage.herokuapp.com/user"
-    response = requests.post(url=endpoint, data=payload)
+    response = requests.post(url=endpoint, json=payload)
     print(response.status_code)
-    print(response.json())
 
 def test_get_otp():
 
@@ -27,9 +25,8 @@ def test_get_otp():
         "phone": "+91xxxxxxxx"
     }
     endpoint = ("https://hbs-ob-stage.herokuapp.com/get_register_otp")
-    response = requests.post(url=endpoint, data=payload)
+    response = requests.post(url=endpoint, json=payload)
     print(response.status_code)
-    print(response.json())
 
 def test_delete_user():
 
@@ -39,10 +36,9 @@ def test_delete_user():
 
     }
     endpoint = ("https://hbs-ob-stage.herokuapp.com/user")
-    response = requests.delete(url=endpoint, data=payload)
+    response = requests.delete(url=endpoint, json=payload)
     response_body = response.json()
     print(response.status_code)
-    print(response.json())
 
 def test_edit_user():
 
@@ -54,9 +50,8 @@ def test_edit_user():
         "otp": 111111
     }
     endpoint = ("https://hbs-ob-stage.herokuapp.com/user")
-    response = requests.put(url=endpoint, data=payload)
+    response = requests.put(url=endpoint, json=payload)
     print(response.status_code)
-    print(response.json())
 
 def test_login_otp():
 
@@ -64,9 +59,8 @@ def test_login_otp():
         "phone": "+91xxxxxxxxx"
     }
     endpoint = ("https://hbs-ob-stage.herokuapp.com/get_otp")
-    response = requests.post(url=endpoint,data=payload)
+    response = requests.post(url=endpoint, json=payload)
     print(response.status_code)
-    print(response.json())
 
 def test_authenticate_using_pwd():
 
@@ -76,9 +70,8 @@ def test_authenticate_using_pwd():
         "password": "admin456567236724"
     }
     endpoint = ("https://hbs-ob-stage.herokuapp.com/authenticate")
-    response = requests.post(url=endpoint, data=payload)
+    response = requests.post(url=endpoint, json=payload)
     print(response.status_code)
-    print(response.json())
 
 def test_authenticate_using_otp():
 
@@ -90,7 +83,6 @@ def test_authenticate_using_otp():
     endpoint = ("https://hbs-ob-stage.herokuapp.com/authenticat")
     response = requests.post(url=endpoint, data=payload)
     print(response.status_code)
-    print(response.json())
 
 def test_login():
 
